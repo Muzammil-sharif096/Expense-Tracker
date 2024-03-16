@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .income {
+            border: 5px solid green;
+        }
+
+        .expense {
+            border-right: 5px solid red;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container shadow-xl shadow-black rounded-lg rouded-xl w-max p-10 mx-auto m-20  space-y-2">
+        <h2 class="text-center font-bold tracking-wide text-purple-600  text-4xl">Expense Tracker</h2>
+        <h4 class="px-2 text-lg font-bold">Your Balance</h4>
+        <h1 id="balance" class="px-2 text-4xl ">$0.00</h1>
+        <div class="flex justify-center p-4 ">
+            <div class="bg-white px-20 py-4 shadow-md text-center">
+                <h2 class="text-xl font-normal tracking-wide ">INCOME</h2>
+                <h2 id="income" class="text-2xl pt-2 text-green-500">$0.00</h2>
+            </div>
+            <div class="bg-white px-20 py-4 shadow-md text-center  ">
+                <h2 class="text-xl font-normal tracking-wide">EXPENSE</h2>
+                <h2 id="expense" class="text-2xl pt-2 text-red-500">$0.00</h2>
+            </div>
+        </div>
+        <h2 class="px-2 text-xl tracking-wide pt-4 font-bold">History</h2>
+        <div class="ml-4" id="showCard"></div>
+        <hr class="m-4 mt-4 border border-black border-opacity-10">
+        <h2 class="px-2 text-xl tracking-wide pt-4 font-bold">Add new transaction</h2>
+        <hr class="m-4 mt-4 border border-black border-opacity-10">
+        <div class="tracking-widest px-2">
+            <label class="block  font-normal text-md" for="">Text</label>
+            <input id="text"
+                class="w-11/12 m-3 p-2 text-md rounded-sm  border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                type="text" placeholder="Enter text...">
+        </div>
+        <div class="px-2">
+            <label for="amount">Amount <br />
+                (negative - expense, positive - income)</label>
+            <input id="amount"
+                class="w-11/12 m-3 p-2 text-md rounded-sm  border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                type="number" placeholder="Enter amount...">
+        </div>
+        <div class="px-3">
+            <button onclick="handleclk()"
+                class="bg-[#9c88ff;] text-center rounded-sm w-11/12 m-3 p-3 tracking-widest text-white">Add
+                transaction</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
